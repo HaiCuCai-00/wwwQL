@@ -1,0 +1,51 @@
+﻿@model BSAF16072021.Models.TopicTrainee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/training/Views/Shared/_TrainingLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TopicTrainee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.startday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dadelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dadelete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Topic.topic_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic.topic_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trainee.trainee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trainee.trainee_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_topictrainer }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

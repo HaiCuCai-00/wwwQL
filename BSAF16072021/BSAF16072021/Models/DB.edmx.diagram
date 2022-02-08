@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f3fa4afa074d4de38b08f601a2dbf8fe" Name="Diagram1">
+        <EntityTypeShape EntityType="SQL160721Model.Admin" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL160721Model.Course" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL160721Model.Topic" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL160721Model.TopicTrainee" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL160721Model.TopicTrainer" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL160721Model.Trainee" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL160721Model.Trainer" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQL160721Model.Training" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="SQL160721Model.FK_Topic_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL160721Model.FK_TopicTrainee_Topic" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL160721Model.FK_TopicTrainer_Topic" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL160721Model.FK_TopicTrainee_Trainee" ManuallyRouted="false" />
+        <AssociationConnector Association="SQL160721Model.FK_TopicTrainer_Trainer" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

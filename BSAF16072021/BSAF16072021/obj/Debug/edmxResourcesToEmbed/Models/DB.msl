@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SQL160721ModelStoreContainer" CdmEntityContainer="SQL160721Entities2">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="SQL160721Model.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+          <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="SQL160721Model.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_description" ColumnName="course_description" />
+          <ScalarProperty Name="dadelete" ColumnName="dadelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="SQL160721Model.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+          <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+          <ScalarProperty Name="topic_description" ColumnName="topic_description" />
+          <ScalarProperty Name="tcourse_id" ColumnName="tcourse_id" />
+          <ScalarProperty Name="dadelete" ColumnName="dadelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicTrainees">
+      <EntityTypeMapping TypeName="SQL160721Model.TopicTrainee">
+        <MappingFragment StoreEntitySet="TopicTrainee">
+          <ScalarProperty Name="id_topictrainer" ColumnName="id_topictrainer" />
+          <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+          <ScalarProperty Name="startday" ColumnName="startday" />
+          <ScalarProperty Name="id_trainee" ColumnName="id_trainee" />
+          <ScalarProperty Name="dadelete" ColumnName="dadelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicTrainers">
+      <EntityTypeMapping TypeName="SQL160721Model.TopicTrainer">
+        <MappingFragment StoreEntitySet="TopicTrainer">
+          <ScalarProperty Name="id_topictrainer" ColumnName="id_topictrainer" />
+          <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+          <ScalarProperty Name="id_trainer" ColumnName="id_trainer" />
+          <ScalarProperty Name="startday" ColumnName="startday" />
+          <ScalarProperty Name="dadelete" ColumnName="dadelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainees">
+      <EntityTypeMapping TypeName="SQL160721Model.Trainee">
+        <MappingFragment StoreEntitySet="Trainee">
+          <ScalarProperty Name="trainee_id" ColumnName="trainee_id" />
+          <ScalarProperty Name="trainee_name" ColumnName="trainee_name" />
+          <ScalarProperty Name="trainee_password" ColumnName="trainee_password" />
+          <ScalarProperty Name="trainee_email" ColumnName="trainee_email" />
+          <ScalarProperty Name="trainee_telephone" ColumnName="trainee_telephone" />
+          <ScalarProperty Name="trainer_address" ColumnName="trainer_address" />
+          <ScalarProperty Name="dadelete" ColumnName="dadelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainers">
+      <EntityTypeMapping TypeName="SQL160721Model.Trainer">
+        <MappingFragment StoreEntitySet="Trainer">
+          <ScalarProperty Name="trainer_id" ColumnName="trainer_id" />
+          <ScalarProperty Name="trainer_name" ColumnName="trainer_name" />
+          <ScalarProperty Name="trainer_password" ColumnName="trainer_password" />
+          <ScalarProperty Name="trainer_email" ColumnName="trainer_email" />
+          <ScalarProperty Name="trainer_telephone" ColumnName="trainer_telephone" />
+          <ScalarProperty Name="trainer_address" ColumnName="trainer_address" />
+          <ScalarProperty Name="dadelete" ColumnName="dadelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainings">
+      <EntityTypeMapping TypeName="SQL160721Model.Training">
+        <MappingFragment StoreEntitySet="Training">
+          <ScalarProperty Name="training_id" ColumnName="training_id" />
+          <ScalarProperty Name="training_name" ColumnName="training_name" />
+          <ScalarProperty Name="training_password" ColumnName="training_password" />
+          <ScalarProperty Name="training_email" ColumnName="training_email" />
+          <ScalarProperty Name="training_telephone" ColumnName="training_telephone" />
+          <ScalarProperty Name="training_address" ColumnName="training_address" />
+          <ScalarProperty Name="dadelete" ColumnName="dadelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

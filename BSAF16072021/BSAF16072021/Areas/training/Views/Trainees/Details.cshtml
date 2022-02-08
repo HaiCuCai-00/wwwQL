@@ -1,0 +1,67 @@
+﻿@model BSAF16072021.Models.Trainee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/training/Views/Shared/_TrainingLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trainee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.trainee_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trainee_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trainee_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trainee_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trainee_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trainee_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trainee_telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trainee_telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trainer_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trainer_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dadelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dadelete)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.trainee_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

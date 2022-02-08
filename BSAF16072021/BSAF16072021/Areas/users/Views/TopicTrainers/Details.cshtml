@@ -1,0 +1,34 @@
+﻿@model BSAF16072021.Models.TopicTrainer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/users/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TopicTrainer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Topic name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic.topic_name)
+        </dd>
+
+        <dt>
+            Trainers name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trainer.trainer_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<BSAF16072021.Models.Trainee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/training/Views/Shared/_TrainingLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.trainee_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trainee_password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trainee_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trainee_telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trainer_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dadelete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.trainee_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trainee_password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trainee_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trainee_telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trainer_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dadelete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.trainee_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.trainee_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.trainee_id })
+        </td>
+    </tr>
+}
+
+</table>

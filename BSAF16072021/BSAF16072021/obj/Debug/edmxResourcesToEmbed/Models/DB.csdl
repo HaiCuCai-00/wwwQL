@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SQL160721Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="admin_name" />
+    </Key>
+    <Property Name="admin_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="admin_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="course_id" />
+    </Key>
+    <Property Name="course_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="course_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="course_description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="dadelete" Type="Byte" />
+    <NavigationProperty Name="Topics" Relationship="Self.FK_Topic_Course" FromRole="Course" ToRole="Topic" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="topic_id" />
+    </Key>
+    <Property Name="topic_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="topic_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="topic_description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="tcourse_id" Type="Int32" />
+    <Property Name="dadelete" Type="Byte" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_Topic_Course" FromRole="Topic" ToRole="Course" />
+    <NavigationProperty Name="TopicTrainees" Relationship="Self.FK_TopicTrainee_Topic" FromRole="Topic" ToRole="TopicTrainee" />
+    <NavigationProperty Name="TopicTrainers" Relationship="Self.FK_TopicTrainer_Topic" FromRole="Topic" ToRole="TopicTrainer" />
+  </EntityType>
+  <EntityType Name="TopicTrainee">
+    <Key>
+      <PropertyRef Name="id_topictrainer" />
+    </Key>
+    <Property Name="id_topictrainer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_topic" Type="Int32" Nullable="false" />
+    <Property Name="startday" Type="DateTime" Precision="0" />
+    <Property Name="id_trainee" Type="Int32" Nullable="false" />
+    <Property Name="dadelete" Type="Byte" />
+    <NavigationProperty Name="Topic" Relationship="Self.FK_TopicTrainee_Topic" FromRole="TopicTrainee" ToRole="Topic" />
+    <NavigationProperty Name="Trainee" Relationship="Self.FK_TopicTrainee_Trainee" FromRole="TopicTrainee" ToRole="Trainee" />
+  </EntityType>
+  <EntityType Name="TopicTrainer">
+    <Key>
+      <PropertyRef Name="id_topictrainer" />
+    </Key>
+    <Property Name="id_topictrainer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_topic" Type="Int32" Nullable="false" />
+    <Property Name="id_trainer" Type="Int32" Nullable="false" />
+    <Property Name="startday" Type="DateTime" Precision="0" />
+    <Property Name="dadelete" Type="Byte" />
+    <NavigationProperty Name="Topic" Relationship="Self.FK_TopicTrainer_Topic" FromRole="TopicTrainer" ToRole="Topic" />
+    <NavigationProperty Name="Trainer" Relationship="Self.FK_TopicTrainer_Trainer" FromRole="TopicTrainer" ToRole="Trainer" />
+  </EntityType>
+  <EntityType Name="Trainee">
+    <Key>
+      <PropertyRef Name="trainee_id" />
+    </Key>
+    <Property Name="trainee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="trainee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trainee_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="trainee_email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="trainee_telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trainer_address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="dadelete" Type="Byte" />
+    <NavigationProperty Name="TopicTrainees" Relationship="Self.FK_TopicTrainee_Trainee" FromRole="Trainee" ToRole="TopicTrainee" />
+  </EntityType>
+  <EntityType Name="Trainer">
+    <Key>
+      <PropertyRef Name="trainer_id" />
+    </Key>
+    <Property Name="trainer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="trainer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trainer_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trainer_email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="trainer_telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trainer_address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="dadelete" Type="Byte" />
+    <NavigationProperty Name="TopicTrainers" Relationship="Self.FK_TopicTrainer_Trainer" FromRole="Trainer" ToRole="TopicTrainer" />
+  </EntityType>
+  <EntityType Name="Training">
+    <Key>
+      <PropertyRef Name="training_id" />
+    </Key>
+    <Property Name="training_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="training_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="training_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="training_email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="training_telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="training_address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="dadelete" Type="Byte" />
+  </EntityType>
+  <Association Name="FK_Topic_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="Topic" Type="Self.Topic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="course_id" />
+      </Principal>
+      <Dependent Role="Topic">
+        <PropertyRef Name="tcourse_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicTrainee_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+    <End Role="TopicTrainee" Type="Self.TopicTrainee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="topic_id" />
+      </Principal>
+      <Dependent Role="TopicTrainee">
+        <PropertyRef Name="id_topic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicTrainer_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+    <End Role="TopicTrainer" Type="Self.TopicTrainer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="topic_id" />
+      </Principal>
+      <Dependent Role="TopicTrainer">
+        <PropertyRef Name="id_topic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicTrainee_Trainee">
+    <End Role="Trainee" Type="Self.Trainee" Multiplicity="1" />
+    <End Role="TopicTrainee" Type="Self.TopicTrainee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainee">
+        <PropertyRef Name="trainee_id" />
+      </Principal>
+      <Dependent Role="TopicTrainee">
+        <PropertyRef Name="id_trainee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicTrainer_Trainer">
+    <End Role="Trainer" Type="Self.Trainer" Multiplicity="1" />
+    <End Role="TopicTrainer" Type="Self.TopicTrainer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainer">
+        <PropertyRef Name="trainer_id" />
+      </Principal>
+      <Dependent Role="TopicTrainer">
+        <PropertyRef Name="id_trainer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SQL160721Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="Topics" EntityType="Self.Topic" />
+    <EntitySet Name="TopicTrainees" EntityType="Self.TopicTrainee" />
+    <EntitySet Name="TopicTrainers" EntityType="Self.TopicTrainer" />
+    <EntitySet Name="Trainees" EntityType="Self.Trainee" />
+    <EntitySet Name="Trainers" EntityType="Self.Trainer" />
+    <EntitySet Name="Trainings" EntityType="Self.Training" />
+    <AssociationSet Name="FK_Topic_Course" Association="Self.FK_Topic_Course">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Topic" EntitySet="Topics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicTrainee_Topic" Association="Self.FK_TopicTrainee_Topic">
+      <End Role="Topic" EntitySet="Topics" />
+      <End Role="TopicTrainee" EntitySet="TopicTrainees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicTrainer_Topic" Association="Self.FK_TopicTrainer_Topic">
+      <End Role="Topic" EntitySet="Topics" />
+      <End Role="TopicTrainer" EntitySet="TopicTrainers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicTrainee_Trainee" Association="Self.FK_TopicTrainee_Trainee">
+      <End Role="Trainee" EntitySet="Trainees" />
+      <End Role="TopicTrainee" EntitySet="TopicTrainees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicTrainer_Trainer" Association="Self.FK_TopicTrainer_Trainer">
+      <End Role="Trainer" EntitySet="Trainers" />
+      <End Role="TopicTrainer" EntitySet="TopicTrainers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

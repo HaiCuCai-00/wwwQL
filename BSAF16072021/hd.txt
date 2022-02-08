@@ -1,0 +1,61 @@
+1. Giải nén
+
+2. Mở project với Visual Studio
+file BSAF16072021.sln
+- Vào file Web.config
+
+3. Config lại kết nối từ Visual Studio đến SQL Server
+- Tại thẻ <connectionStrings> </connectionStrings>
+thay đổi tên server , tài khoản , mật khẩu kết nối đến sql server
+data source là server name
+- Kiểm tra xem đã nhận database chưa 
+4. lưu ý
+- tên database SQL160721Entities2 để không bị lỗi.
+- nếu add không thành công thì add bằng tay add-> new item ->ado.net -> ef designer -> để tên database SQL160721Entities2
+Lưu lại. build lại ứng dụng . Và run
+
+Đăng nhập :
+- Tài khoản admin 
+tk : admin
+mk admin
+- Tài khoản training
+tk : Training	
+mk : training
+- Tài khoản trainer
+tk :haidemo	
+mk :haidemo
+
+Vào trang home chọn để quyền để đăng nhập, chọn đúng quyền sẽ đăng nhập thành công.
+các chức được để ở thanh menu danh mục hoặc catogery
+
+---------------------------------Eng-------------------------
+1. Decompression
+
+2. Open the project with Visual Studio
+file BSAF16072021.sln
+- Go to the file Web.config
+
+3. Reconfigure connection from Visual Studio to SQL Server
+- At the <connectionStrings> </connectionStrings> . tag
+change server name, account, password to connect to sql serverql
+data source is server name
+- Check to see if the database has been received
+4. note
+- database name SQL160721Entities2 to not fail.
+- if add fails, add manually add-> new item -> ado.net -> ef designer -> name database SQL160721Entities2
+Save. rebuild the app. And run
+
+Log in :
+- Admin account
+tk: admin
+mk admin
+- Training account
+tk : Training
+mk : training
+- Trainer account
+tk :haidemo
+mk :haidemo
+
+Go to the home page and choose the right permission to log in, choose the right permission to log in successfully.
+Functions are placed in the menu bar menu or category 
+Xem thêm về văn bản nguồn nàyNhập văn bản nguồn để có thông tin dịch thuật bổ sung
